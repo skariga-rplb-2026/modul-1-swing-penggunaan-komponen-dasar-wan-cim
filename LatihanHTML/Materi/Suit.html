@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Suit</h1>
+    <table border="1" width="500">
+        <tr align="center">
+            <td>
+                <h2>YOU</h2>
+                <button onclick="main('batu')">BATU</button>
+                <button onclick="main('gunting')">GUNTING</button>
+                <button onclick="main('kertas')">KERTAS</button>
+                <img src="img/batu.png" id="img_user">
+            </td>
+            <td>
+                <h2>COM</h2><br>
+                <button id="com">RANDOM</button>
+                <img src="img/batu.png" id="img_komputer">
+            </td>
+        </tr>
+        <tr align="center">
+            <td colspan="2">
+                <button>HASIL</button>
+                <p id="hasil"></p>
+                <p id="skor">User : 0 | COM : 0</p>
+            </td>
+        </tr>
+    </table>
+    
+    <script src="SuitScript.js"></script>
+</body>
+</html>
