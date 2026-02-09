@@ -12,7 +12,7 @@ package Modul3;
 public class Tugas extends javax.swing.JFrame {
 
     /**
-     * Creates new form Kalkulator
+     * Creates new form Tugas
      */
     public Tugas() {
         initComponents();
