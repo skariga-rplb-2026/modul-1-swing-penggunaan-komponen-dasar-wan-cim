@@ -210,17 +210,14 @@ public class Tugas_modul2 extends javax.swing.JFrame {
         } else {
             jmlhanak = 0;
         }
-        if (jmlhanak >= 0 && jmlhanak <= 3) {
-            if (jmlhanak == 3) {
+        if (jmlhanak >= 3) {
             double gajiTotal = gajiPokok + (gajiPokok * 10/100 * 3);
             txtTotal.setText(Double.toString(gajiTotal));
-            } else {
+        } else {
             double gajiTotal = gajiPokok + (gajiPokok * 10/100 * jmlhanak);
             txtTotal.setText(Double.toString(gajiTotal));
-            }
-        } else {
-            txtTotal.setText("Error, check your input");
         }
+        
         
     }//GEN-LAST:event_btnTotalActionPerformed
 
