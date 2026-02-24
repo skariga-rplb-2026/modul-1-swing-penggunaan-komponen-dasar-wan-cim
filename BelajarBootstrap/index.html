@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">WebSiteku</a>
+        </div>
+    </nav>
+    <h1>Latihan Bootstrap</h1>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-3 col-5 bg-light text-black m-3 p-3">Kolom 1</div>
+            <div class="col-md-3 col-5 bg-info text-black m-3 p-3">Kolom 2</div>
+            <div class="col-md-3 col-5 bg-warning text-black m-3 p-3">Kolom 3</div>
+            <div class="col-md-3 col-5 bg-body text-black m-3 p-3">Kolom 4</div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card shadow">
+                    <img src="./img/szs.png" >
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card shadow p-1">
+                    <h1 class="text-center fw-bold p-4">PROFIL SAYA</h1>
+                    <p class="text-muted text-center">Back End Developer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card shadow p-2" style="width: 18rem;">
+                    <img src="./img/rog.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">ASUS ROG Strix Scar 18</h5>
+                        <p class="card-text">Cari sendiri deskripsinya</p>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Beli</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow p-2" style="width: 18rem;">
+                    <img src="./img/razer.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Razer Blade 16</h5>
+                        <p class="card-text">Cari sendiri deskripsinya</p>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Beli</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow p-2" style="width: 18rem;">
+                    <img src="./img/victus.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">HP Victus Gaming 16</h5>
+                        <p class="card-text">Cari sendiri deskripsinya</p>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Beli</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <form class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label class="form-label">Nama</label>
+                <input type="text" class="form-control" required>
+                <div class="invalid-feedback">
+                    Nama Wajib Diisi!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" required>
+                <div class="invalid-feedback">
+                    Email Wajib Diisi!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" required>
+                <div class="invalid-feedback">
+                    Kata sandi Anda harus terdiri dari 8-20 karakter, mengandung huruf dan angka, 
+                    dan tidak boleh mengandung spasi, karakter khusus, atau emoji!
+                </div>
+            </div>
+            <button class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+    </script>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
