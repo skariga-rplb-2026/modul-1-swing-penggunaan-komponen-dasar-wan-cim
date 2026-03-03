@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LatihanPHP</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>Latihan PHP</h1>
-    <?php
-    // Tanda untuk memberi komentar satu baris
-    echo "Hello World!";
-    /*
-    tanda untuk memberi komentar lebih dari 1 baris
-    */
-    ?>
+    <form name="form" action="proses.php" method="get">
+        Nilai : <input type="text" name="angka" /> 
+        <br/>
+        <input type="submit" value="SUBMIT" />
+    </form>
 </body>
 </html>
