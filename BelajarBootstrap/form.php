@@ -7,9 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    <form name="form" action="proses.php" method="get">
+    <form name="form" action="proses.php" method="post">
         Nilai : <input type="text" name="angka" /> 
         <br/>
+
+        Jurusan :
+        <select name = "jurusan">
+            <option value=""> Pilih </option>
+            <option value="ti"> Teknik Informatika </option>
+            <option value="si"> Sistem Informasi </option>
+            <option value="mi"> Manajemen Informatika </option>
+            <option value="tk"> Teknik Komputer </option>
+            <option value="ka"> Komputer Akuntansi </option>
+        </select><br>
         <input type="submit" value="SUBMIT" />
     </form>
 </body>
