@@ -4,7 +4,7 @@
         ["nama" => "Ani","kursus" => "PHP","bayar" => "400000"],
         ["nama" => "Amir","kursus" => "MYSQL","bayar" => "350000"],
         ["nama" => "Agus","kursus" => "PHP","bayar" => "400000"],
-        ["nama" => "Minah","kursus" => "HTML","bayar" => "300000"],
+        ["nama" => "Minah","kursus" => "HTML","bayar" => "300000"]
     ];
 
     
