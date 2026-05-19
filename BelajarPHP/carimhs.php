@@ -1,69 +1,59 @@
 <?php
-    $koneksi = mysqli_connect("localhost", "root", "", "ridwan_akademik");
-
-    if (!$koneksi) {
-        die("Koneksi gagal : " . mysqli_connect_error());
-    }
-
-    function semuaMhs($koneksi, $nim) {
-        $query = "SELECT * FROM mahasiswa WHERE 1=1";
-
-        if ($nim != "") {
-            $query .= " AND nim='$nim'";
-        }
-
-        return mysqli_query($koneksi, $query);
-    }
-
-    $nim = "";
-
-    if (isset($_POST['nim'])) {
-        $nim = $_POST['nim'];
-    }
-
-    $hasil = semuaMhs($koneksi, $nim);
+include('crudmhs.php');
+$keyword = isset($_POST['keyword']) ? $_POST['keyword'] : '';
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Daftar Mahasiswa</title>
-    <link rel="stylesheet" href="css\bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Cari Mahasiswa</title>
 </head>
 <body>
-    <h2>Daftar Mahasiswa</h2>
-    <form method="POST">
-        Cari NIM: <input type="text" name="nim" placeholder="Masukan NIM">
+    <h2>Pencarian Data Mahasiswa</h2>
 
-        <button type="submit">- Cari -</button>
+    <form action="" method="post">
+        Cari NIM: 
+        <input type="text" name="keyword" value="<?php echo $keyword; ?>" placeholder="Masukkan NIM...">
+        <input type="submit" value="Cari">
     </form>
 
-    <br>
-
-    <table class="table table-bordered table-striped table-hover border-dark">
-        <thead class="table-dark">
-            <tr>
-                <th>NIM</th>
-                <th>Nama</th>
-                <th>Kelamin</th>
-                <th>Jurusan</th>
-            </tr>
-        </thead>
-        <?php
-            while($data = mysqli_fetch_array($hasil)) {
-        ?>
-        <tbody>
-            <tr>
-                <td><?php echo $data['nim']; ?></td>
-                <td><?php echo $data['nama']; ?></td>
-                <td><?php echo $data['kelamin']; ?></td>
-                <td><?php echo $data['jurusan']; ?></td>
-                </tr>
-        </tbody>
-        <?php
+    <?php
+    if ($keyword != "") {
+        echo "<h3>Hasil Pencarian: '$keyword'</h3>";
+        $sqlCari = "SELECT * FROM mahasiswa WHERE nim LIKE '%$keyword%'";
+        $hasilCari = bacaMhs($sqlCari);
+        
+        if ($hasilCari) {
+            renderTabel($hasilCari);
+        } else {
+            echo "Data tidak ditemukan.";
         }
-        ?>
+    }
+    ?>
 
-    </table>
+    <hr>
+    <h3>Daftar Seluruh Mahasiswa</h3>
+    <?php
+    $semua = bacaSemuaMhs();
+    renderTabel($semua);
+
+    function renderTabel($data) {
+        if (!$data) return;
+        echo '<table border="1">
+                <tr>
+                    <th>NIM</th><th>Nama</th><th>Kelamin</th><th>Jurusan</th>
+                </tr>';
+        foreach ($data as $mhs) {
+            echo "<tr>
+                    <td>{$mhs['nim']}</td>
+                    <td>{$mhs['nama']}</td>
+                    <td>{$mhs['kelamin']}</td>
+                    <td>{$mhs['jurusan']}</td>
+                  </tr>";
+        }
+        echo '</table>';
+    }
+    ?>
 </body>
 </html>
